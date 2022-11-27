@@ -44,3 +44,8 @@ x = {(t - l)(y - z) \over h - l} + z; l \ne h
 I'm a backend developer who has somehow avoided ever learning anything about front end development.  
 This little calculator therefore is pretty terrible - but functions, is tiny, and is fast.  
 I may use it as an excuse to learn a little more about front end work in the future.
+
+## Todo
+
+- [ ] Add validiation to inputs
+- [ ] Styling
