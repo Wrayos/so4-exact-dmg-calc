@@ -49,3 +49,4 @@ I may use it as an excuse to learn a little more about front end work in the fut
 
 - [ ] Add validiation to inputs
 - [ ] Styling
+- [ ] Investigate using an actual framework instead of simple HTML as a learning exercise
