@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <title>Star Ocean 4 - Exact Damage Calculator</title>
+
+    <script>
+        function calculate() {
+            var low_attack = document.getElementById("low_attack").valueAsNumber;
+            var low_damage = document.getElementById("low_damage").valueAsNumber;
+            var high_attack = document.getElementById("high_attack").valueAsNumber;
+            var high_damage = document.getElementById("high_damage").valueAsNumber;
+            var target_damage = document.getElementById("target_damage").valueAsNumber;
+          
+            var target_attack = (target_damage - low_damage) * (high_attack - low_attack) / (high_damage - low_damage) + low_attack;
+
+            document.getElementById("result").innerHTML = `Target ATK is: ${target_attack.toFixed(0)}`;
+        }
+
+        function reset() {
+            ["low_attack", "low_damage", "high_attack", "high_damage", "target_damage"].forEach(element => document.getElementById(element).value = "");
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Star Ocean 4 - Exact Damage Calculator</h1>
+        <p>
+            This is a simple calculator to assist Star Ocean 4 players get their 'deal exact damage' battle trophies.
+        </p>
+        <p>
+            To use it you will need to take some actions in-game to collect a small amount of data, and input that into the calculator.
+            For all steps it is expected you are fighting the exact same enemy - and the calculation will only be accurate for that exact same enemy.
+        </p>
+        <h3>How to use</h3>
+        <ul>
+            <li><b>Low Attack:</b>  Equip your character with the weakest weapon you have, while ensuring their ATK remains above 0.  This value is the characters resulting ATK.</li>
+            <li><b>Low Damage:</b>  With the 'Low Attack' weapon equipped, fight your chosen enemy.  Attack it.  This value is how much damage you do with a non-critical hit.</li>
+            <li><b>High Attack:</b>  Equip your character with the strongest weapon you have.  This value is the characters resulting ATK. </li>
+            <li><b>High Damage:</b>  With the 'High Attack' weapon equipped, fight your chosen enemy.  Attack it.  This value is how much damage you do with a non-critical hit.</li>
+            <li><b>Target Damage:</b>  This is the amount of damage you want to do.</li>
+            <li><b>Target Attack:</b>  The value the calculator produces.  This is a recommended ATK you should have to achieve the Target Damage hit.</li>
+        </ul>
+    </div>
+
+    <div class="calculator">
+        <div class="calc_input">
+            <label for="low_attack">Low Attack:</label>
+            <input type="number" id="low_attack"/>
+        </div>
+        <div class="calc_input">
+            <label for="low_damage">Low Damage:</label>
+            <input type="number" id="low_damage"/>
+        </div>
+        <div class="calc_input">
+            <label for="high_attack">High Attack:</label>
+            <input type="number", id="high_attack"/>
+        </div>
+        <div class="calc_input">
+            <label for="high_damage">High Damage:</label>
+            <input type="number", id="high_damage"/>
+        </div>
+        <div class="calc_input">
+            <label for="target_damage">Target Damage:</label>
+            <input type="number", id="target_damage"/>
+        </div>
+
+        <button type="button" onclick="calculate()">Calculate</button>
+        <button type="button" onclick="reset()">Reset</button>
+        <p id="result"></p>
+    </div>
+
+    <div class="about">
+        <h3>About</h3>
+        <p>See the <a href=https://github.com/Wrayos/so4-exact-dmg-calc/blob/main/README.md>Github README</a> for information about how this calculator works & credits.</p>
+    </div>
+</body>
