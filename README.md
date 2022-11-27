@@ -1,5 +1,7 @@
 # Star Ocean 4: Exact damage calculator
 
+Go to the page here: https://wrayos.github.io/so4-exact-dmg-calc/
+
 This is an incredibly simple calculator to assist players of Star Ocean 4 in getting the battle trophies for dealing exact amounts of damage.
 
 There have existed a few applications over the years to help in this calculation, but they seem to have been lost to time.
